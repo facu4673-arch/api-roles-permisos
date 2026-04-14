@@ -1,8 +1,6 @@
 const router = require("express").Router();
 const { register, login } = require("../controllers/auth.controller");
 
-router.post("/register", register);
-router.post("/login", login);
 /**
  * @swagger
  * /auth/register:
@@ -10,4 +8,34 @@ router.post("/login", login);
  *     summary: Registrar usuario
  *     tags: [Auth]
  */
+router.post("/register", register);
+
+/**
+ * @swagger
+ * /auth/login:
+ *   post:
+ *     summary: Login de usuario
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 example: test@gmail.com
+ *               password:
+ *                 type: string
+ *                 example: 123456
+ *     responses:
+ *       200:
+ *         description: Login exitoso
+ */
+router.post("/login", login);
+
 module.exports = router;

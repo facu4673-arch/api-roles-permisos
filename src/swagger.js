@@ -10,9 +10,11 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000/api"
+        url: process.env.NODE_ENV === "production"
+          ? "https://api-roles-permisos-1.onrender.com/api"
+          : "http://localhost:3000/api"
       }
-    ],
+    ], // 👈 ESTA COMA ES LA QUE TE FALTABA
     components: {
       securitySchemes: {
         bearerAuth: {
@@ -28,7 +30,7 @@ const options = {
       }
     ]
   },
-  apis: ["./src/routes/*.js"]
+  apis: [__dirname + "/../routes/*.js"]
 };
 
 const swaggerSpec = swaggerJsdoc(options);
