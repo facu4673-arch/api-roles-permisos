@@ -7,6 +7,25 @@ const { register, login } = require("../controllers/auth.controller");
  *   post:
  *     summary: Registrar usuario
  *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 example: test@gmail.com
+ *               password:
+ *                 type: string
+ *                 example: 123456
+ *               role:
+ *                 type: string
+ *                 example: user
+ *     responses:
+ *       201:
+ *         description: Usuario creado correctamente
  */
 router.post("/register", register);
 
