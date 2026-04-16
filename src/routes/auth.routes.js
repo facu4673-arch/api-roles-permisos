@@ -14,6 +14,9 @@ const { register, login } = require("../controllers/auth.controller");
  *           schema:
  *             type: object
  *             properties:
+ *               name:
+ *                 type: string
+ *                 example: Facundo
  *               email:
  *                 type: string
  *                 example: test@gmail.com
