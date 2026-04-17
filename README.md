@@ -54,6 +54,15 @@ POST /api/auth/login
 - USER → acceso básico
 - ADMIN → acceso completo (gestión de usuarios)
 
+## 🔐 Autenticación
+
+Esta API utiliza JWT para proteger rutas.
+
+1. Registrarse o loguearse
+2. Copiar el token
+3. Usar el botón **Authorize** en Swagger
+4. Probar endpoints protegidos
+
 ## 📄 Documentación
 
 👉 http://localhost:3000/api-docs
@@ -63,7 +72,7 @@ POST /api/auth/login
 ```bash
 npm install
 npm run dev
-
+```
 
 ## 📬 Contacto
 
